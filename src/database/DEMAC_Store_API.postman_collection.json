@@ -1,0 +1,23 @@
+{
+	"info": {
+		"_postman_id": "245aa01c-04cc-463a-b824-edd0fb2fed37",
+		"name": "DEMAC_Store_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26981729"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
