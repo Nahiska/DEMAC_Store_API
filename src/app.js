@@ -6,7 +6,8 @@ require('dotenv').config();
 const [ 
     productRouter, 
     orderRouter, 
-    categoryRouter
+    categoryRouter, 
+    userRouter
 ] = require("./routes");
 
 const app = express();
@@ -24,6 +25,8 @@ app.use(methodOverride("_method"));
 app.use(`/api/products`, productRouter);
 app.use(`/api/orders`, orderRouter);
 app.use(`/api/categories`, categoryRouter);
+app.use(`/api/users`, userRouter);
+
 
 /* ERROR HANDLING */
 app.use((err, req, res, next) => {
