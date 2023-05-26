@@ -36,8 +36,8 @@ const insertOrderItem = async (data) => {
   try {
     return await OrderProduct.create(data);
   } catch (error) {
-    console.error("Error while fetching order item:", error);
-    throw new Error("Error fetching order item");
+    console.error("Error while creating order item:", error);
+    throw new Error("Error creating order item");
   }
 };
 

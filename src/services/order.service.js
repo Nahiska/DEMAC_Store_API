@@ -8,31 +8,38 @@ const getOrderById = async (id) => {
   return await Order.findByPk(id);
 };
 
-const getOrderByUser = (userId) => {
+const getOrderByUser = (userID) => {
   return Order.findOne({
     where: {
-      userID: userId,
+      userID,
     },
     include: [
-      { association: "orders_products", include: [{ association: "products" }] },
+      { 
+        association: "orders_products",
+        include: [{ association: "products" }]
+      },
+      { 
+        association: "users"
+      }
     ],
   });
 };
 
+
 const insertOrder = async (data) => {
-    try {
-        return await Order.create(data);
-    } catch (error) {
-        console.error("Error while fetching order :", error);
-        throw new Error("Error fetching order ");
-    }
+  try {
+    return await Order.create(data);
+  } catch (error) {
+    console.error("Error while creating order:", error);
+    throw new Error("Error creating order");
+  }
 };
 
-const updateOrder = async (data, Id) => {
+const updateOrder = async (data, id) => {
     try {
         return await Order.create(data, {
             where: {
-                id: Id
+                id,
             }
         });
     } catch (error) {

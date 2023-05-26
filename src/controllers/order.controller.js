@@ -37,27 +37,27 @@ module.exports = {
       return res.status(200).json(order);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error });
+      res.status(500).json({ error: error.message });
     }
   },
+  
   getOrderByUser: async (req, res) => {
     try {
       const { id } = req.user;
       const order = await getOrderByUser(id);
-
-      let response;
-
+  
       if (order) {
         return res.status(200).json(order);
       } else {
-        response = `El usuario ${id} no tiene orden creada`;
+        const response = `El usuario ${id} no tiene orden creada`;
         return res.status(400).json(response);
       }
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error });
+      res.status(500).json({ error: error.message });
     }
   },
+
   addToOrder: async (req, res) => {
     try {
       // id usuario
