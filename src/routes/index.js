@@ -4,5 +4,4 @@ const categoryRouter = require("./category");
 const userRouter = require("./user");
 
 
-
-module.exports = [productRouter, orderRouter, categoryRouter, userRouter];
+module.exports = [userRouter, productRouter, orderRouter, categoryRouter];

@@ -1,4 +1,4 @@
-const { getProducts, getProductById } = require("../services/product.service");
+const { getProducts } = require("../services/product.service");
 
 module.exports = {
     getProducts: async (req, res) => {
@@ -41,17 +41,8 @@ module.exports = {
       return res.status(200).json(RESPONSE);
     } catch (error) {}
   },
-  getProductById: async (req, res) => {
-    try {
-          const ID_PRODUCT = req.params.id;
-          const product = await getProductById(ID_PRODUCT);
-          if (product) {
-                return res.status(200).json(product);
-          } else {
-                return res.status(400).json("Product does not exist");
-          }
-    } catch (error) {}
-},
+
+    getProductById: async (req, res) => {},
     createProduct: async (req, res) => {},
     updateProduct: async (req, res) => {},
     deleteProduct: async (req, res) => {},
