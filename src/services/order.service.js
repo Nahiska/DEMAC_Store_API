@@ -15,11 +15,11 @@ const getOrderByUser = (userID) => {
     },
     include: [
       { 
-        association: "orders_products",
+        association: "orderProducts",
         include: [{ association: "products" }]
       },
       { 
-        association: "users"
+        association: "user"
       }
     ],
   });

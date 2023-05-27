@@ -110,7 +110,7 @@ module.exports = {
         // Si No existe una orden, crear la orden y agregar el item
         const data = {
           userID: userID,
-          state: "PENDIENTE",
+          buyDate: "PENDIENTE",
         };
         const createdOrder = await insertOrder(data);
         let orderItemData = {
