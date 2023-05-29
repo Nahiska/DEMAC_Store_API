@@ -1,4 +1,7 @@
-const { body } = require("express-validator");
+const { check, body } = require("express-validator");
+const bcrypt = require("bcrypt");
+const { Product } = require("../database/models");
+const { insertProduct } = require("../services/product.service");
 
 const productValidationRules = () => {
   return [
@@ -53,15 +56,15 @@ const productValidationRules = () => {
             }
         }),
 
-    check("category")
+    check("categoriesID")
     .notEmpty()
     .withMessage("Por favor seleccione una categoría"),
 
-    check('subCategory')
+    check('subcategoryID')
     .notEmpty()
     .withMessage('Por favor seleccione una subcategoría'),
 
-    check('brand')
+    check('brandID')
     .notEmpty()
     .withMessage('Por favor seleccione una marca'),
 

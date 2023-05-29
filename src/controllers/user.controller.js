@@ -13,12 +13,13 @@ module.exports = {
   getUsers: async (req, res) => {
     try {
       const users = await getUsers();
-      const usersResponse = users.map(({ id, username, email }) => {
+      const usersResponse = users.map(({ id, username, email, address }) => {
         return {
           id,
           username,
           email,
           detail: `/api/users/${id}`,
+          address: address ? address.address : null,
         };
       });
 
@@ -35,7 +36,7 @@ module.exports = {
   getUserById: async (req, res) => {
     try {
       const USER_ID = req.params.id;
-      const { id, username, email, avatar } = await getUserById(
+      const { id, username, email, avatar, address, postal_code, province, city } = await getUserById(
         USER_ID
       );
 
@@ -44,6 +45,10 @@ module.exports = {
         username,
         email,
         avatar,
+        address: address ? address.address : null,
+        postal_code: postal_code ? postal_code.address : null,
+        province: province ? province.address : null,
+        city: city ? city.address : null,
       };
 
       return res.status(200).json(USER_DATA_RESPONSE);
@@ -55,7 +60,8 @@ module.exports = {
     try {
       const result = await insertUser({ 
         ...req.body,
-        password: bcrypt.hashSync(req.body.password, 10)
+        password: bcrypt.hashSync(req.body.password, 10),
+        role: "user"
        });
 
       if (result) {
@@ -80,6 +86,41 @@ module.exports = {
       return res.status(500).json({ Error: "Token error " + error });
     }
   },
-  updateUser: async (req, res) => {},
-  deleteUser: async (req, res) => {},
+  updateUser: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const userData = req.body;
+  
+      const result = await updateUser(id, userData);
+  
+      if (result) {
+        const successResponse = "User updated successfully";
+        return res.status(200).json({ msg: successResponse });
+      } else {
+        const errorResponse = "Something went wrong";
+        return res.status(400).json({ msg: errorResponse });
+      }
+    } catch (error) {
+      console.error("Error updating user:", error);
+      return res.status(500).json({ Error: error.message });
+    }
+  },
+  deleteUser: async (req, res) => {
+    try {
+      const { id } = req.params;
+  
+      const result = await deleteUser(id);
+  
+      if (result) {
+        const successResponse = "User deleted successfully";
+        return res.status(200).json({ msg: successResponse });
+      } else {
+        const errorResponse = "User not found";
+        return res.status(404).json({ msg: errorResponse });
+      }
+    } catch (error) {
+      console.error("Error deleting user:", error);
+      return res.status(500).json({ Error: error.message });
+    }
+  }  
 };
