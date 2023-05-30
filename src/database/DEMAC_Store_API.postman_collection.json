@@ -19,12 +19,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/products",
+							"raw": "http://localhost:3001/api/products",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"products"
@@ -49,16 +49,127 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/products/3",
+							"raw": "http://localhost:3001/api/products/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"products",
 								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjcsIm5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20ifSwiZXhwIjoxNjg1Mzg0ODU0ODE3fSwiaWF0IjoxNjg1MzI0ODU0fQ.cvN4ArrpFDnVUqnQwFnKKSLW763CS0TjRohJPB0QW1c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"iPhone 13 256GB Pink\",\r\n  \"discount\": 43,\r\n  \"price\": 1000000,\r\n  \"image\": \"iphone13.svg\",\r\n  \"categoriesID\": 1,\r\n  \"subcategoryID\": 1,\r\n  \"brandID\": 4,\r\n  \"description\": \"iPhone 13. El sistema de dos cámaras más avanzado en un iPhone. El superrápido chip A15 Bionic. Un gran salto en duración de batería. Un diseño resistente. Y una pantalla Super Retina XDR más brillante.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/products/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjcsIm5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20ifSwiZXhwIjoxNjg1Mzg0ODU0ODE3fSwiaWF0IjoxNjg1MzI0ODU0fQ.cvN4ArrpFDnVUqnQwFnKKSLW763CS0TjRohJPB0QW1c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Motorola G22 128 GB\",\r\n  \"discount\": 20,\r\n  \"price\": 105999,\r\n  \"image\": \"1681864941406_products_.svg\",\r\n  \"categoriesID\": 2,\r\n  \"subcategoryID\": 2,\r\n  \"brandID\": 2,\r\n  \"description\": \"El Motorola Moto G52 es un nuevo miembro de la familia Moto G de smartphones económicos. El Moto G52 cuenta con una pantalla OLED de 6.6 pulgadas a resolución Full HD+ y tasa de refresco de 90Hz, y está potenciado por un procesador Qualcomm Snapdragon 680 con 4GB de RAM y 128GB de almacenamiento interno. Con una cámara triple de 50MP en su dorsal, el Moto G52 tiene una cámara selfie de 16MP, batería de 5000 mAh de carga rápida TurboPower de 30W \"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/products/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjExLCJuYW1lIjpudWxsLCJlbWFpbCI6InRlZmlAbWFpbC5jb20ifSwiZXhwIjoxNjg1NDM0NTk3MzEwfSwiaWF0IjoxNjg1Mzc0NTk3fQ.kxH9HYPjjMA7CUyfcJq-n1dRwESyufDpn8JdbF93Wu8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/products/56",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"products",
+								"56"
 							]
 						}
 					},
@@ -97,12 +208,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/orders",
+							"raw": "http://localhost:3001/api/orders",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"orders"
@@ -127,17 +238,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/orders/detail/1",
+							"raw": "http://localhost:3001/api/orders/detail/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"orders",
 								"detail",
-								"1"
+								"4"
 							]
 						}
 					},
@@ -159,12 +270,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/orders/user",
+							"raw": "http://localhost:3001/api/orders/user",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"orders",
@@ -191,7 +302,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productID\": 3,\r\n    \"productQuantity\": 1\r\n}",
+							"raw": "{\r\n    \"productID\": 1,\r\n    \"productQuantity\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -199,12 +310,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/orders",
+							"raw": "http://localhost:3001/api/orders",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"orders"
@@ -229,12 +340,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/orders/clear/5",
+							"raw": "http://localhost:3001/api/orders/clear/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"orders",
@@ -261,12 +372,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/orders/3",
+							"raw": "http://localhost:3001/api/orders/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"orders",
@@ -292,12 +403,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/orders/1",
+							"raw": "http://localhost:3001/api/orders/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"orders",
@@ -320,7 +431,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjcsIm5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20ifSwiZXhwIjoxNjg1MjI0OTk4NDUzfSwiaWF0IjoxNjg1MTY0OTk4fQ.UpclaXHyZLGk-BKfKi7iiXW624qB1S2T2z4Bblt_OQg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjcsIm5hbWUiOiJGdW5kYWNpw7NuIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSJ9LCJleHAiOjE2ODUzODk4Nzc3ODB9LCJpYXQiOjE2ODUzMjk4Nzd9.kyOhFPjE-ieACKflatlwiqQUXwCQnTxfc0YqD8a3QxA",
 									"type": "string"
 								}
 							]
@@ -328,16 +439,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/users/8",
+							"raw": "http://localhost:3001/api/users/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"users",
-								"8"
+								"7"
 							]
 						}
 					},
@@ -351,7 +462,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjcsIm5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20ifSwiZXhwIjoxNjg1MjI0OTk4NDUzfSwiaWF0IjoxNjg1MTY0OTk4fQ.UpclaXHyZLGk-BKfKi7iiXW624qB1S2T2z4Bblt_OQg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjExLCJuYW1lIjpudWxsLCJlbWFpbCI6InRlZmlAbWFpbC5jb20ifSwiZXhwIjoxNjg1NDM0NTk3MzEwfSwiaWF0IjoxNjg1Mzc0NTk3fQ.kxH9HYPjjMA7CUyfcJq-n1dRwESyufDpn8JdbF93Wu8",
 									"type": "string"
 								}
 							]
@@ -360,7 +471,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"admin\"\r\n}",
+							"raw": "{\r\n    \"email\": \"tefi@mail.com\",\r\n    \"password\": \"Tefi123-\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -368,12 +479,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users/login",
+							"raw": "http://localhost:3001/api/users/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"users",
@@ -400,7 +511,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Tomas\",\r\n    \"email\": \"prueba2@mail.com\",\r\n    \"password\": \"Admin123.\",\r\n    \"pass2\": \"Admin123.\",\r\n    \"check\": \"on\"\r\n}",
+							"raw": "{\r\n  \"username\": \"tefi\",\r\n  \"email\": \"tefi@mail.com\",\r\n  \"password\": \"Tefi123-\",\r\n  \"pass2\": \"Tefi123-\",\r\n  \"avatar\": \"default-imageuser.png\",\r\n  \"terms\": \"on\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -408,16 +519,117 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users/register",
+							"raw": "http://localhost:3001/api/users/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3001",
 							"path": [
 								"api",
 								"users",
 								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjcsIm5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20ifSwiZXhwIjoxNjg1MjI0OTk4NDUzfSwiaWF0IjoxNjg1MTY0OTk4fQ.UpclaXHyZLGk-BKfKi7iiXW624qB1S2T2z4Bblt_OQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjcsIm5hbWUiOiJGdW5kYWNpw7NuIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSJ9LCJleHAiOjE2ODUzODk4Nzc3ODB9LCJpYXQiOjE2ODUzMjk4Nzd9.kyOhFPjE-ieACKflatlwiqQUXwCQnTxfc0YqD8a3QxA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Admin\",\r\n  \"name\": \"Fundación\",\r\n  \"lastName\": \"Formar\",\r\n  \"phone\": \"1234567890\",\r\n  \"avatar\": \"1679261776411_avatar_.png\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjExLCJuYW1lIjpudWxsLCJlbWFpbCI6InRlZmlAbWFpbC5jb20ifSwiZXhwIjoxNjg1NDM0NTk3MzEwfSwiaWF0IjoxNjg1Mzc0NTk3fQ.kxH9HYPjjMA7CUyfcJq-n1dRwESyufDpn8JdbF93Wu8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/users/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"11"
 							]
 						}
 					},
