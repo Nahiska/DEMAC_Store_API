@@ -90,7 +90,7 @@ module.exports = {
     try {
       const { id } = req.params;
       const userData = req.body;
-  
+
       const result = await updateUser(id, userData);
   
       if (result) {

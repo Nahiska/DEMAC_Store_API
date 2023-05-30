@@ -471,7 +471,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"tefi@mail.com\",\r\n    \"password\": \"Tefi123-\"\r\n}",
+							"raw": "{\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -572,7 +572,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjcsIm5hbWUiOiJGdW5kYWNpw7NuIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSJ9LCJleHAiOjE2ODUzODk4Nzc3ODB9LCJpYXQiOjE2ODUzMjk4Nzd9.kyOhFPjE-ieACKflatlwiqQUXwCQnTxfc0YqD8a3QxA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXIiOnsiaWQiOjcsIm5hbWUiOiJGdW5kYWNpw7NuIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSJ9LCJleHAiOjE2ODU0Nzc3OTkxOTl9LCJpYXQiOjE2ODU0MTc3OTl9.flfs8i6vIrpJKMSUPzeknaXp6OSZvMg2fj0_xXn6UpY",
 									"type": "string"
 								}
 							]
@@ -581,7 +581,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"Admin\",\r\n  \"name\": \"Fundación\",\r\n  \"lastName\": \"Formar\",\r\n  \"phone\": \"1234567890\",\r\n  \"avatar\": \"1679261776411_avatar_.png\"\r\n}\r\n",
+							"raw": "{\r\n  \"username\": \"Admin\",\r\n  \"name\": \"Fundación\",\r\n  \"lastName\": \"Formar\",\r\n  \"phone\": \"1234567890\",\r\n  \"avatar\": \"1679261776411_avatar_.png\",\r\n  \"address\": \"Formar\",\r\n  \"postal_code\": \"12345\",\r\n  \"province\": \"Buenos Aires\",\r\n  \"city\": \"Formar\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

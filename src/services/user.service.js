@@ -49,30 +49,15 @@ const insertUser = async (userData) => {
 
 const updateUser = async (id, userData) => {
   try {
-    // Extrae los datos del usuario y la dirección del cuerpo de la solicitud
-    const { user, address } = userData;
-
-    // Actualiza los datos del usuario
-    await User.update(user, { where: { id } });
-
-    // Si se proporcionan datos de dirección, actualiza la dirección asociada al usuario
-    if (address) {
-      // Busca la dirección existente del usuario
-      const existingAddress = await Address.findOne({ where: { userId: id } });
-
-      if (existingAddress) {
-        // Si la dirección existe, actualiza sus datos
-        await Address.update(address, { where: { id: existingAddress.id } });
-      } else {
-        // Si no hay una dirección existente, crea una nueva dirección asociada al usuario
-        await Address.create({ ...address, userId: id });
-      }
-    }
-
-    return true; // Devuelve true si la actualización fue exitosa
+    return await User.update(userData, {
+      where: { id },
+      include: [
+        { association: "address" },
+      ],
+    });
   } catch (error) {
-    console.error("Error updating user:", error);
-    throw error; // Lanza una excepción en caso de error
+    console.error("Error while updating user:", error);
+    throw new Error("Error updating user");
   }
 };
 
